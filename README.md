@@ -2,8 +2,7 @@
 
 ## About
 Web application built with TypeScript, as a way to solidify learning experience.\
-Developed to track and calculate user's daily calorie intake, with the possibility to create personal\ 
-macronutrient goals that can be easily changed, and food database with personalized nutritional values. 
+Developed to track and calculate user's daily calorie intake, with the possibility to create personal macronutrient goals that can be easily changed, and food database with personalized nutritional values. 
 
 ## Tech Stack
 RESTfull web API built with Node.js and Express.js. Used PostgreSQL as a database and Prisma as the ORM of choice.\
