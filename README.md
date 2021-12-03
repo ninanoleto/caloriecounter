@@ -6,7 +6,7 @@ Developed to track and calculate user's daily calorie intake, with the possibili
 
 ## Tech Stack
 RESTfull web API built with Node.js and Express.js. Used PostgreSQL as a database and Prisma as the ORM of choice.\
-Frontend built with React.js and TypeScript - react-router-dom was used to manage web routing and styled-components to manage CSS styles.
+Frontend design conception with Figma, built with React.js and TypeScript - react-router-dom was used to manage web routing and styled-components to manage CSS styles.
 
 ## Architecture and Design
 Atomic Design was used in the frontend, for ease of organization and reusability of components.\
