@@ -11,7 +11,7 @@ Frontend design conception with Figma, built with React.js and TypeScript - reac
 ## Architecture and Design
 Atomic Design was used in the frontend, for ease of organization and reusability of components.\
 Domain modelling was used to design the backend business logic, to help learning to develop software from a business-first approach.\
-MVC was used to structure the backend, to help organize the code and keep the code more mantainable.
+MVC was used to structure the backend, to help organize the code and keep the code more maintainable.
 
 
 
