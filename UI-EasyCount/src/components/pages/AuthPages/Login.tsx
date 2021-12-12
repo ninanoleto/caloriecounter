@@ -1,4 +1,3 @@
-import { RouteComponentProps } from "react-router-dom";
 import { useManyInputState } from "../../../hooks/useInputState";
 import ButtonSquare from "../../atoms/Buttons/ButtonSquare/ButtonSquare";
 import AuthInput from "../../atoms/Inputs/AuthInput/AuthInput";
@@ -16,9 +15,7 @@ import {
   Title,
 } from "./Auth.styles";
 
-interface LoginProps extends RouteComponentProps {}
-
-const Login = (props: LoginProps) => {
+const Login = () => {
   const loginUser = (email: string, password: string) => {};
 
   const initialValues = {

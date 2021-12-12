@@ -34,10 +34,10 @@ const getButtonSize = (props: StyledButtonProps) =>
     : "1.1rem";
 
 const getTextTransform = (props: StyledButtonProps) =>
-  // ((props.variant === ButtonVariant.Add ||
-  //   props.variant === ButtonVariant.Delete) &&
-  //   "capitalize") ||
   props.variant === ButtonVariant.AddChecked && "lowercase";
+
+const getFloat = (props: StyledButtonProps) =>
+  props.variant === ButtonVariant.AddChecked && `float: right`;
 
 const getFontStyle = (props: StyledButtonProps) =>
   (props.variant === ButtonVariant.AddChecked &&
@@ -49,6 +49,8 @@ export const StyledButton = styled.button<StyledButtonProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  ${getFloat};
 
   color: ${getButtonColor};
   ${getFontStyle};
