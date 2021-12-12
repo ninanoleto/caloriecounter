@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { RouteComponentProps } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useToggle } from "../../../hooks/useToggle";
 import {
   foodPortionService,
@@ -29,11 +29,10 @@ import {
 import Icon from "../../atoms/Icons/Icon";
 import { IconImg } from "../../atoms/Icons/Icon.types";
 
-interface AddFoodProps extends RouteComponentProps {}
-
-const AddFood = (props: AddFoodProps) => {
-  const query = new URLSearchParams(props.location.search);
-  const mealId = query.get("meal");
+const AddFood = () => {
+  const [searchParams, _] = useSearchParams();
+  const navigate = useNavigate();
+  const mealId = searchParams.get("meal");
 
   const [meal, setMeal] = useState<MealDto>();
   const [allFoods, setAllFoods] = useState<FoodDto[]>();
@@ -54,8 +53,7 @@ const AddFood = (props: AddFoodProps) => {
     refreshAllFoods();
   }, []);
 
-  const { history } = props;
-  const back = (): void => history.goBack();
+  const back = (): void => navigate(-1);
 
   const chooseGoBack = (): void => {
     if (isSearching) {
@@ -126,8 +124,8 @@ const AddFood = (props: AddFoodProps) => {
             <ButtonSquare
               onClick={toggleNewFoodModal}
               color={ButtonSquareColor.Green}
-              margin={{ marginTop: 20 }}
-              flexEnd
+              margin={{ marginTop: 40 }}
+              flexStart
             >
               Create new Food
             </ButtonSquare>

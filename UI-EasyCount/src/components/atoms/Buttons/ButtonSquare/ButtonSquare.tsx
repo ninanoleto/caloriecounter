@@ -12,18 +12,18 @@ interface ButtonSquareProps {
   margin?: MarginProps;
   padding?: PaddingProps;
   onClick?: () => void;
-  flexEnd?: boolean;
+  flexStart?: boolean;
 }
 
 const ButtonSquare = (props: ButtonSquareProps) => {
-  const { children, type, color, margin, padding, onClick, flexEnd } = props;
+  const { children, type, color, margin, padding, onClick, flexStart } = props;
 
   const handleClick = () => {
     onClick !== undefined && onClick();
   };
 
   return (
-    <StyledButtonSquareWrapper position={flexEnd || false}>
+    <StyledButtonSquareWrapper position={flexStart || false}>
       <StyledButtonSquare
         color={color || ButtonSquareColor.Peach}
         type={type ? "submit" : "button"}

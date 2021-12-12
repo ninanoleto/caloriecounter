@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { RouteComponentProps } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 import Button from "../../atoms/Buttons/ButtonIcon/Button";
 import {
@@ -54,10 +54,9 @@ const tryParseDateFromURL = (
   return date;
 };
 
-export interface FoodDiaryProps extends RouteComponentProps {}
-
-const FoodDiary = (props: FoodDiaryProps) => {
-  const queryParams = new URLSearchParams(props.location.search);
+const FoodDiary = () => {
+  const navigate = useNavigate();
+  const [queryParams, _] = useSearchParams();
   const defaultDate = tryParseDateFromURL(queryParams) ?? new Date();
 
   const [allPreset, setAllPreset] = useState<PresetDto[]>();
@@ -74,7 +73,7 @@ const FoodDiary = (props: FoodDiaryProps) => {
     useToggle(false);
 
   const setNewPath = (path: string) => {
-    props.history.push(path);
+    navigate(path);
   };
 
   const refreshDaySummary = (): Promise<void> => {

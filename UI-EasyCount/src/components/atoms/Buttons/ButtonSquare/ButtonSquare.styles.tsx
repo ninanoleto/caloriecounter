@@ -19,7 +19,7 @@ interface ButtonSquareProps {
 }
 
 const getPosition = (props: ButtonSquareWrapperProps) =>
-  props.position ? "flex-end" : "center";
+  props.position ? "flex-start" : "center";
 
 const getBgColor = (props: ButtonSquareProps) =>
   (props.color === ButtonSquareColor.Peach && colors.yellow) ||

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { RouteComponentProps } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useManyInputState } from "../../../hooks/useInputState";
 import {
   PresetDto,
@@ -19,9 +19,8 @@ import {
   Title,
 } from "./Preset.styles";
 
-interface PresetProps extends RouteComponentProps {}
-
-const Preset = (props: PresetProps) => {
+const Preset = () => {
+  const navigate = useNavigate();
   const [preset, setPreset] = useState<PresetDto>();
   const [kcalValue, setKcalValue] = useState("");
 
@@ -62,9 +61,7 @@ const Preset = (props: PresetProps) => {
   };
 
   if (preset) {
-    props.history.push({
-      pathname: "/foodDiary",
-    });
+    navigate("/foodDiary");
   }
 
   return (

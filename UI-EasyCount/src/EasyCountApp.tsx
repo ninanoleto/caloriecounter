@@ -1,4 +1,4 @@
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/organisms/NavBar/Navbar";
 import Page from "./components/templates/Page";
 import AddFood from "./components/pages/AddFoodPage/AddFood";
@@ -11,59 +11,54 @@ import NotFound from "./components/pages/NotFoundPage/NotFound";
 export default function EasyCountApp() {
   return (
     <>
-      <Switch>
+      <Routes>
         <Route
-          exact
           path="/signup"
-          render={(routeProps) => (
+          element={
             <Page>
               <Navbar signup />
-              <SignUp {...routeProps} />
+              <SignUp />
             </Page>
-          )}
+          }
         />
         <Route
-          exact
           path="/login"
-          render={(routeProps) => (
+          element={
             <Page>
               <Navbar login />
-              <Login {...routeProps} />
+              <Login />
             </Page>
-          )}
+          }
         />
         <Route
-          exact
           path="/preset"
-          render={(routeProps) => (
+          element={
             <Page>
               <Navbar />
-              <Preset {...routeProps} />
+              <Preset />
             </Page>
-          )}
+          }
         />
         <Route
-          exact
           path="/foodDiary"
-          render={(routeProps) => (
+          element={
             <Page>
               <Navbar />
-              <FoodDiary {...routeProps} />
+              <FoodDiary />
             </Page>
-          )}
+          }
         />
         <Route
-          exact
           path="/food"
-          render={(routeProps) => (
+          element={
             <Page>
               <Navbar />
-              <AddFood {...routeProps} />
+              <AddFood />
             </Page>
-          )}
+          }
         />
-        <Route component={NotFound} />
-      </Switch>
+        <Route element={<NotFound />} />
+      </Routes>
     </>
   );
 }
