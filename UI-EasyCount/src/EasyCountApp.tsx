@@ -57,7 +57,7 @@ export default function EasyCountApp() {
             </Page>
           }
         />
-        <Route element={<NotFound />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
