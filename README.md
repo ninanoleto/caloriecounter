@@ -41,4 +41,4 @@ $ npm install
 $ npm run start
 ```
 
-Projec will be running on port `3000`
+App will be running on port `3000`
