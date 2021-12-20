@@ -21,13 +21,12 @@ MVC was used to structure the backend, to help organize the code and keep the co
 ### API:
 
 1. Make sure Postgres is running
-2. Configure your databade url though the env var or add to `.env` file: DATABASE_URL="postgresql://`PGPassword`@`PGHost`:`PGPort`/`PGDatabaseName`?schema=public"
+2. Configure your databade url though the env var or add to `.env` file: DATABASE_URL="postgresql://`PGUser`:`PGPassword`@`PGHost`:`PGPort`/`PGDatabaseName`?schema=public"
 
 ```bash
 # install dependencies
 $ npm install
-# install and run ORM
-$ npm install prisma
+# run ORM migration
 $ npx prisma migrate dev --name init
 # run project
 $ npm run dev
@@ -41,3 +40,5 @@ $ npm install
 # run project
 $ npm run start
 ```
+
+Projec will be running on port `3000`

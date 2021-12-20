@@ -177,10 +177,10 @@ const FoodDiary = () => {
       <Link
         to="/preset"
         style={{
+          marginTop: "10rem",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          textDecoration: "none",
           color: `${colors.darkerGreen}`,
           fontWeight: 500,
         }}
