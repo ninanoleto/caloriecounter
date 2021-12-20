@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
 import Button from "../../atoms/Buttons/ButtonIcon/Button";
 import {
@@ -37,6 +37,7 @@ import AddPreset from "../../organisms/Modals/ChangePreset/AddPreset";
 import DeletePreset from "../../organisms/Modals/ChangePreset/DeletePreset";
 import EditPreset from "../../organisms/Modals/ChangePreset/EditPreset";
 import { Loading } from "./FoodDiary.styles";
+import { colors } from "../../../variables";
 
 /**
  * Tries to parse a date from query parameters
@@ -171,17 +172,21 @@ const FoodDiary = () => {
     getAllPreset();
   };
 
-  if (daySummary === undefined)
+  if (daySummary === undefined || allPreset === undefined)
     return (
-      <Loading>
-        <Icon img={IconImg.Loading} />
-      </Loading>
-    );
-  if (allPreset === undefined)
-    return (
-      <Loading>
-        <Icon img={IconImg.Loading} />
-      </Loading>
+      <Link
+        to="/preset"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          textDecoration: "none",
+          color: `${colors.darkerGreen}`,
+          fontWeight: 500,
+        }}
+      >
+        Create your first Preset Goal
+      </Link>
     );
 
   const handlePresetChange = async (
