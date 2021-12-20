@@ -17,6 +17,19 @@ const NotFound = () => {
         Page Not Found
       </h1>
       <Link
+        to="/preset"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          textDecoration: "none",
+          color: `${colors.darkerGreen}`,
+          fontWeight: 500,
+        }}
+      >
+        Create your first Preset Goal
+      </Link>
+      <Link
         to="/foodDiary"
         style={{
           display: "flex",
