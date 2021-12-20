@@ -22,7 +22,7 @@ const NotFound = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          textDecoration: "none",
+          paddingTop: "4rem",
           color: `${colors.darkerGreen}`,
           fontWeight: 500,
         }}
@@ -35,7 +35,6 @@ const NotFound = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          textDecoration: "none",
           paddingTop: "4rem",
           color: `${colors.darkerGreen}`,
           fontWeight: 500,
